@@ -1,0 +1,5 @@
+"/Users/lawrence/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Users/lawrence/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/CLion.app/Contents/bin/ninja/mac/ninja" -G Ninja -S /Users/lawrence/CLionProjects/HTML_Parser -B /Users/lawrence/CLionProjects/HTML_Parser/cmake-build-debug
+-- Found SFML 2.6.1 in /opt/homebrew/lib/cmake/SFML
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/lawrence/CLionProjects/HTML_Parser/cmake-build-debug

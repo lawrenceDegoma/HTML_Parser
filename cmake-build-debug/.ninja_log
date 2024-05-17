@@ -1,0 +1,20 @@
+# ninja log v5
+2	161	1715935503726813101	CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o	1774da4759ae8409
+1	389	1715935503954357125	CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o	601aaddddb590239
+0	405	1715935503970436413	CMakeFiles/HTML_Parser.dir/main.cpp.o	edd6703b54f1f5e
+405	446	1715935504013597504	HTML_Parser	494289e4b478dbb9
+3	451	1715936648640195328	CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o	1774da4759ae8409
+4	481	1715936648671918940	CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o	8cacb84798de2c35
+4	484	1715936648675271025	CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o	ba02fb4ef4254f4b
+4	410	1715936762413322940	CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o	8adbcd7e56f4b148
+3	492	1715974361033212461	CMakeFiles/HTML_Parser.dir/main.cpp.o	edd6703b54f1f5e
+4	496	1715974361038384646	CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o	8adbcd7e56f4b148
+3	539	1715974456973489346	CMakeFiles/HTML_Parser.dir/main.cpp.o	edd6703b54f1f5e
+4	526	1715974634412633236	CMakeFiles/HTML_Parser.dir/main.cpp.o	edd6703b54f1f5e
+5	530	1715974634418129839	CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o	8adbcd7e56f4b148
+6	525	1715974866460832882	CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o	601aaddddb590239
+6	552	1715974866488064394	CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o	1774da4759ae8409
+6	606	1715974866541813164	CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o	ba02fb4ef4254f4b
+5	628	1715974866564735119	CMakeFiles/HTML_Parser.dir/main.cpp.o	edd6703b54f1f5e
+6	636	1715974866572657480	CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o	8adbcd7e56f4b148
+636	684	1715974866623252656	HTML_Parser	2044648704cc092b
