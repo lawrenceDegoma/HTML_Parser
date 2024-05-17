@@ -1,62 +1,24 @@
-//
-// Created by Lawrence Degoma on 5/17/24.
-//
-
 #include "HtmlParser.h"
 
-HtmlParser::HtmlParser(const std::string& htmlContent) : htmlContent(htmlContent), currentPosition(0){}
+HtmlParser::HtmlParser(const std::string& content) : htmlContent(content) {}
 
-HtmlElement* HtmlParser::parse(){
-    return parseElement();
-}
+HtmlElement* HtmlParser::parse() {
+    // For simplicity, let's create a basic parser using regex
+    HtmlElement* root = new HtmlElement("html");
 
-HtmlElement* HtmlParser::parseElement(){
-    skipWhiteSpace();
-    if (htmlContent[currentPosition] != '<'){
-        return nullptr;
+    std::regex elementRegex(R"(<(\w+)[^>]*>(.*?)<\/\1>)");
+    auto elementsBegin = std::sregex_iterator(htmlContent.begin(), htmlContent.end(), elementRegex);
+    auto elementsEnd = std::sregex_iterator();
+
+    for (std::sregex_iterator i = elementsBegin; i != elementsEnd; ++i) {
+        std::smatch match = *i;
+        std::string tagName = match[1].str();
+        std::string innerText = match[2].str();
+
+        HtmlElement* element = new HtmlElement(tagName);
+        element->setText(innerText);
+        root->addChild(element);
     }
 
-    currentPosition++;
-    std::string tagName = parseTagName();
-
-    HtmlElement* element = new HtmlElement(tagName);
-
-    skipWhiteSpace();
-    if (htmlContent[currentPosition] == '>'){
-        currentPosition++;
-        element->setText(parseText());
-
-        while (htmlContent[currentPosition] != '<' || htmlContent[currentPosition+1] != '/'){
-            HtmlElement* child = parseElement();
-            if (child){
-                element->addChild(child);
-            }
-        }
-
-        currentPosition += tagName.size() + 3;
-    }
-    
-    return element;
-}
-
-std::string HtmlParser::parseTagName() {
-    size_t start = currentPosition;
-    while (std::isalnum(htmlContent[currentPosition])) {
-        currentPosition++;
-    }
-    return htmlContent.substr(start, currentPosition - start);
-}
-
-std::string HtmlParser::parseText() {
-    size_t start = currentPosition;
-    while (htmlContent[currentPosition] != '<') {
-        currentPosition++;
-    }
-    return htmlContent.substr(start, currentPosition - start);
-}
-
-void HtmlParser::skipWhiteSpace() {
-    while (std::isspace(htmlContent[currentPosition])) {
-        currentPosition++;
-    }
+    return root;
 }

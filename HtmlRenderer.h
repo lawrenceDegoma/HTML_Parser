@@ -2,19 +2,16 @@
 // Created by Lawrence Degoma on 5/17/24.
 //
 
-#ifndef HTML_PARSER_HTMLRENDERER_H
-#define HTML_PARSER_HTMLRENDERER_H
+#ifndef HTML_RENDERER_H
+#define HTML_RENDERER_H
 
-#include <SFML/Graphics.hpp>
 #include "HtmlElement.h"
+#include <SFML/Graphics.hpp>
 
 class HtmlRenderer {
-private:
-    void renderElement(sf::RenderWindow& window, HtmlElement* element, float x, float y);
 public:
-    HtmlRenderer();
     void render(sf::RenderWindow& window, HtmlElement* root);
+    void renderElement(sf::RenderWindow& window, HtmlElement* element, float x, float y);
 };
 
-
-#endif //HTML_PARSER_HTMLRENDERER_H
+#endif // HTML_RENDERER_H
