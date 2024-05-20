@@ -1,21 +1,25 @@
-//
-// Created by Lawrence Degoma on 5/17/24.
-//
+#ifndef HTML_PARSER_HTMLPARSER_H
+#define HTML_PARSER_HTMLPARSER_H
 
-#ifndef HTML_PARSER_H
-#define HTML_PARSER_H
-
-#include "HtmlElement.h"
-#include <regex>
 #include <string>
+#include <cctype>
+#include <iostream>
+#include "HtmlElement.h"
 
 class HtmlParser {
 private:
     std::string htmlContent;
+    size_t pos;
+
+    HtmlElement* parseElement();
+    std::string parseTagName();
+    std::string parseText();
+    void skipWhitespace();
+    bool startsWith(const std::string& prefix) const;
 
 public:
-    HtmlParser(const std::string& content);
+    HtmlParser(const std::string& htmlContent);
     HtmlElement* parse();
 };
 
-#endif // HTML_PARSER_H
+#endif // HTML_PARSER_HTMLPARSER_H

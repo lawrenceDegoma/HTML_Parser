@@ -1,43 +1,52 @@
-//
-// Created by Lawrence Degoma on 5/17/24.
-//
-
 #include "HtmlRenderer.h"
+#include <SFML/Graphics.hpp>
+#include <iostream>
 
-void HtmlRenderer::render(sf::RenderWindow& window, HtmlElement* root) {
-    renderElement(window, root, 10.0f, 10.0f);
+HtmlRenderer::HtmlRenderer() {
+    if (!font.loadFromFile("arial.ttf")) {
+        std::cerr << "Could not load font" << std::endl;
+    }
 }
 
-void HtmlRenderer::renderElement(sf::RenderWindow& window, HtmlElement* element, float x, float y) {
-    sf::Font font;
-    if (!font.loadFromFile("arial.ttf")) {
-        return;
+void HtmlRenderer::render(sf::RenderWindow& window, HtmlElement* root) {
+    if (root) {
+        float x = 10.0f;
+        float y = 10.0f;
+        renderElement(window, root, x, y);
     }
+}
 
-    sf::Text text;
-    text.setFont(font);
+void HtmlRenderer::renderElement(sf::RenderWindow& window, HtmlElement* element, float& x, float& y) {
+    if (!element) return;
 
-    if (element->getTagName() == "h1") {
-        text.setString(element->getText());
-        text.setCharacterSize(30);
-        text.setFillColor(sf::Color::Black);
-        text.setPosition(x, y);
-        window.draw(text);
+    std::string tagName = element->getTagName();
+    if (tagName == "h1") {
+        renderText(window, element->getText(), x, y, 30, sf::Color::Black);
         y += 40;
-    } else if (element->getTagName() == "p") {
-        text.setString(element->getText());
-        text.setCharacterSize(20);
-        text.setFillColor(sf::Color::Black);
-        text.setPosition(x, y);
-        window.draw(text);
+    } else if (tagName == "p") {
+        renderText(window, element->getText(), x, y, 20, sf::Color::Black);
         y += 30;
+    } else if (tagName == "div") {
+        float childX = x;
+        float childY = y;
+        for (HtmlElement* child : element->getChildren()) {
+            renderElement(window, child, childX, childY);
+            childY += 10;
+        }
+        y = childY + 10;
+    } else {
+        for (HtmlElement* child : element->getChildren()) {
+            renderElement(window, child, x, y);
+        }
     }
+}
 
-    float childX = x + 20;
-    float childY = y;
-
-    for (HtmlElement* child : element->getChildren()) {
-        renderElement(window, child, childX, childY);
-        childY += 40;
-    }
+void HtmlRenderer::renderText(sf::RenderWindow& window, const std::string& text, float x, float y, unsigned int size, const sf::Color& color) {
+    sf::Text sfText;
+    sfText.setFont(font);
+    sfText.setString(text);
+    sfText.setCharacterSize(size);
+    sfText.setFillColor(color);
+    sfText.setPosition(x, y);
+    window.draw(sfText);
 }

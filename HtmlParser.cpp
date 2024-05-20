@@ -1,24 +1,74 @@
 #include "HtmlParser.h"
 
-HtmlParser::HtmlParser(const std::string& content) : htmlContent(content) {}
+HtmlParser::HtmlParser(const std::string& htmlContent) : htmlContent(htmlContent), pos(0) {}
 
 HtmlElement* HtmlParser::parse() {
-    // For simplicity, let's create a basic parser using regex
-    HtmlElement* root = new HtmlElement("html");
+    return parseElement();
+}
 
-    std::regex elementRegex(R"(<(\w+)[^>]*>(.*?)<\/\1>)");
-    auto elementsBegin = std::sregex_iterator(htmlContent.begin(), htmlContent.end(), elementRegex);
-    auto elementsEnd = std::sregex_iterator();
+HtmlElement* HtmlParser::parseElement() {
+    skipWhitespace();
 
-    for (std::sregex_iterator i = elementsBegin; i != elementsEnd; ++i) {
-        std::smatch match = *i;
-        std::string tagName = match[1].str();
-        std::string innerText = match[2].str();
+    if (pos >= htmlContent.size() || htmlContent[pos] != '<') {
+        return nullptr;
+    }
+    pos++;
 
-        HtmlElement* element = new HtmlElement(tagName);
-        element->setText(innerText);
-        root->addChild(element);
+    std::string tagName = parseTagName();
+
+    HtmlElement* element = new HtmlElement(tagName);
+
+    while (pos < htmlContent.size() && htmlContent[pos] != '>') {
+        pos++;
+    }
+    pos++; // Skip '>'
+
+    std::string text = parseText();
+    if (!text.empty()) {
+        element->setText(text);
     }
 
-    return root;
+    while (!startsWith("</" + tagName + ">") && pos < htmlContent.size()) {
+        HtmlElement* child = parseElement();
+        if (child) {
+            element->addChild(child);
+        } else {
+            break;
+        }
+        skipWhitespace();
+    }
+
+    if (startsWith("</" + tagName + ">")) {
+        pos += tagName.size() + 3; // Skip '</tagName>'
+    } else {
+        std::cerr << "Expected closing tag </" << tagName << ">" << std::endl;
+    }
+
+    return element;
+}
+
+std::string HtmlParser::parseTagName() {
+    size_t start = pos;
+    while (pos < htmlContent.size() && std::isalnum(htmlContent[pos])) {
+        pos++;
+    }
+    return htmlContent.substr(start, pos - start);
+}
+
+std::string HtmlParser::parseText() {
+    size_t start = pos;
+    while (pos < htmlContent.size() && htmlContent[pos] != '<') {
+        pos++;
+    }
+    return htmlContent.substr(start, pos - start);
+}
+
+void HtmlParser::skipWhitespace() {
+    while (pos < htmlContent.size() && std::isspace(htmlContent[pos])) {
+        pos++;
+    }
+}
+
+bool HtmlParser::startsWith(const std::string& prefix) const {
+    return htmlContent.compare(pos, prefix.size(), prefix) == 0;
 }
