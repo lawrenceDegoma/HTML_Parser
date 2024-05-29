@@ -13,6 +13,8 @@ add_executable(HTML_Parser main.cpp
         HtmlWindow.cpp
         HtmlWindow.h
         HtmlDocument.cpp
-        HtmlDocument.h)
+        HtmlDocument.h
+        CssParser.cpp
+        CssParser.h)
 target_link_libraries(HTML_Parser sfml-graphics sfml-audio)
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)

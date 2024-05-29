@@ -6,7 +6,12 @@
 #include <iostream>
 #include "HtmlElement.h"
 
+
 class HtmlParser {
+public:
+    HtmlParser(const std::string& htmlContent);
+    HtmlElement* parse();
+
 private:
     std::string htmlContent;
     size_t pos;
@@ -16,10 +21,9 @@ private:
     std::string parseText();
     void skipWhitespace();
     bool startsWith(const std::string& prefix) const;
-
-public:
-    HtmlParser(const std::string& htmlContent);
-    HtmlElement* parse();
+    void skipDoctype();
+    void skipComment();
+    void parseAttribute(HtmlElement* element);
 };
 
 #endif // HTML_PARSER_HTMLPARSER_H

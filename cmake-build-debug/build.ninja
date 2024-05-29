@@ -91,6 +91,13 @@ build CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o: CXX_COMPILER__HTML_Parser_u
   OBJECT_DIR = CMakeFiles/HTML_Parser.dir
   OBJECT_FILE_DIR = CMakeFiles/HTML_Parser.dir
 
+build CMakeFiles/HTML_Parser.dir/CssParser.cpp.o: CXX_COMPILER__HTML_Parser_unscanned_Debug /Users/lawrence/CLionProjects/HTML_Parser/CssParser.cpp || cmake_object_order_depends_target_HTML_Parser
+  DEP_FILE = CMakeFiles/HTML_Parser.dir/CssParser.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/HTML_Parser.dir
+  OBJECT_FILE_DIR = CMakeFiles/HTML_Parser.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target HTML_Parser
@@ -99,7 +106,7 @@ build CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o: CXX_COMPILER__HTML_Parser_u
 #############################################
 # Link the executable HTML_Parser
 
-build HTML_Parser: CXX_EXECUTABLE_LINKER__HTML_Parser_Debug CMakeFiles/HTML_Parser.dir/main.cpp.o CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o | /opt/homebrew/lib/libsfml-graphics.2.6.1.dylib /opt/homebrew/lib/libsfml-audio.2.6.1.dylib /opt/homebrew/lib/libsfml-window.2.6.1.dylib /opt/homebrew/lib/libsfml-system.2.6.1.dylib
+build HTML_Parser: CXX_EXECUTABLE_LINKER__HTML_Parser_Debug CMakeFiles/HTML_Parser.dir/main.cpp.o CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o CMakeFiles/HTML_Parser.dir/CssParser.cpp.o | /opt/homebrew/lib/libsfml-graphics.2.6.1.dylib /opt/homebrew/lib/libsfml-audio.2.6.1.dylib /opt/homebrew/lib/libsfml-window.2.6.1.dylib /opt/homebrew/lib/libsfml-system.2.6.1.dylib
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib  /opt/homebrew/lib/libsfml-graphics.2.6.1.dylib  /opt/homebrew/lib/libsfml-audio.2.6.1.dylib  /opt/homebrew/lib/libsfml-window.2.6.1.dylib  /opt/homebrew/lib/libsfml-system.2.6.1.dylib
   OBJECT_DIR = CMakeFiles/HTML_Parser.dir

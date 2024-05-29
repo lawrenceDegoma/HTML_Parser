@@ -4,9 +4,24 @@
 
 #include "HtmlWindow.h"
 
+void applyCSS(HtmlElement* element, const std::vector<CSSRule>& cssRules) {
+    for (const CSSRule& rule : cssRules) {
+        if (rule.selector == element->getTagName()) {
+            for (const auto& property : rule.properties) {
+                element->setCssProperty(property.first, property.second);
+                std::cout << "Applied CSS: " << property.first << " = " << property.second << " to " << element->getTagName() << std::endl;
+            }
+        }
+    }
+
+    for (HtmlElement* child : element->getChildren()) {
+        applyCSS(child, cssRules);
+    }
+}
+
 HtmlWindow::HtmlWindow(HtmlRenderer& renderer) : renderer(renderer) {}
 
-void HtmlWindow::run(const std::string& htmlFilePath) {
+void HtmlWindow::run(const std::string& htmlFilePath, const std::string& cssFilePath) {
     std::string htmlContent = HtmlDocument::readHtmlFile(htmlFilePath);
 
     if (htmlContent.empty()) {
@@ -16,6 +31,22 @@ void HtmlWindow::run(const std::string& htmlFilePath) {
 
     HtmlParser parser(htmlContent);
     HtmlElement* root = parser.parse();
+
+    if (!root) {
+        std::cerr << "Failed to parse HTML content." << std::endl;
+        return;
+    }
+
+    std::string cssContent = HtmlDocument::readHtmlFile(cssFilePath);
+    if (cssContent.empty()) {
+        std::cerr << "Failed to read CSS file: " << cssFilePath << std::endl;
+        return;
+    }
+
+    CSSParser cssParser(cssContent);
+    std::vector<CSSRule> cssRules = cssParser.parse();
+
+    applyCSS(root, cssRules);
 
     sf::RenderWindow window(sf::VideoMode(800, 600), "HTML Parser");
 

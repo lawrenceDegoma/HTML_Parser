@@ -18,7 +18,7 @@ void HtmlElement::setText(const std::string& text) {
     this->text = text;
 }
 
-std::string HtmlElement::getText() const {  // Ensure this matches the declaration
+std::string HtmlElement::getText() const {
     return text;
 }
 
@@ -28,4 +28,22 @@ void HtmlElement::addChild(HtmlElement* child) {
 
 const std::vector<HtmlElement*>& HtmlElement::getChildren() const {
     return children;
+}
+
+void HtmlElement::setCssProperty(const std::string& property, const std::string& value) {
+    cssProperties[property] = value;
+}
+
+std::string HtmlElement::getCssProperty(const std::string& property) const {
+    auto it = cssProperties.find(property);
+    return it != cssProperties.end() ? it->second : "";
+}
+
+void HtmlElement::setAttribute(const std::string& name, const std::string& value) {
+    attributes[name] = value;
+}
+
+std::string HtmlElement::getAttribute(const std::string& name) const {
+    auto it = attributes.find(name);
+    return it != attributes.end() ? it->second : "";
 }
