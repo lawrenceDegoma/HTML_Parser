@@ -7,10 +7,8 @@
 
 #include <string>
 #include <unordered_map>
-#include <iostream>
-#include <cctype>
-#include <sstream>
 #include <vector>
+#include <cctype>
 
 struct CSSRule {
     std::string selector;
@@ -25,11 +23,10 @@ public:
 private:
     std::string cssContent;
     size_t pos;
-
-    CSSRule parseRule();
     void skipWhitespace();
     std::string parseIdentifier();
     std::string parsePropertyValue();
+    CSSRule parseRule();
 };
 
 #endif //HTML_PARSER_CSSPARSER_H

@@ -21,8 +21,18 @@ void applyCSS(HtmlElement* element, const std::vector<CSSRule>& cssRules) {
 
 HtmlWindow::HtmlWindow(HtmlRenderer& renderer) : renderer(renderer) {}
 
+std::string readFile(const std::string& filePath) {
+    std::ifstream file(filePath);
+    if (!file.is_open()) {
+        return "";
+    }
+    std::string content((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+    file.close();
+    return content;
+}
+
 void HtmlWindow::run(const std::string& htmlFilePath, const std::string& cssFilePath) {
-    std::string htmlContent = HtmlDocument::readHtmlFile(htmlFilePath);
+    std::string htmlContent = readFile(htmlFilePath);
 
     if (htmlContent.empty()) {
         std::cerr << "Failed to read HTML file: " << htmlFilePath << std::endl;
@@ -37,7 +47,7 @@ void HtmlWindow::run(const std::string& htmlFilePath, const std::string& cssFile
         return;
     }
 
-    std::string cssContent = HtmlDocument::readHtmlFile(cssFilePath);
+    std::string cssContent = readFile(cssFilePath);
     if (cssContent.empty()) {
         std::cerr << "Failed to read CSS file: " << cssFilePath << std::endl;
         return;

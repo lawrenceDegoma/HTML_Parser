@@ -54,7 +54,7 @@ void CSSParser::skipWhitespace() {
 
 std::string CSSParser::parseIdentifier() {
     size_t start = pos;
-    while (pos < cssContent.size() && (std::isalnum(cssContent[pos]) || cssContent[pos] == '-')) {
+    while (pos < cssContent.size() && (std::isalnum(cssContent[pos]) || cssContent[pos] == '-' || cssContent[pos] == '#')) {
         pos++;
     }
     return cssContent.substr(start, pos - start);

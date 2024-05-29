@@ -1,6 +1,4 @@
 #include "HtmlRenderer.h"
-#include <SFML/Graphics.hpp>
-#include <iostream>
 
 HtmlRenderer::HtmlRenderer() {
     if (!font.loadFromFile("arial.ttf")) {
@@ -20,15 +18,27 @@ void HtmlRenderer::renderElement(sf::RenderWindow& window, HtmlElement* element,
     if (!element) return;
 
     std::string tagName = element->getTagName();
+    sf::Color color = parseColor(element->getCssProperty("color"));
+    unsigned int fontSize = parseFontSize(element->getCssProperty("font-size"));
+    std::string align = element->getCssProperty("text-align");
+
     if (tagName == "h1") {
-        renderText(window, element->getText(), x, y, 30, sf::Color::Black);
+        renderText(window, element->getText(), x, y, fontSize ? fontSize : 30, color);
         y += 40;
     } else if (tagName == "p") {
-        renderText(window, element->getText(), x, y, 20, sf::Color::Black);
+        renderText(window, element->getText(), x, y, fontSize ? fontSize : 20, color);
         y += 30;
     } else if (tagName == "div") {
-        float childX = x;
-        float childY = y;
+        sf::RectangleShape rect;
+        rect.setPosition(x, y);
+        rect.setSize(sf::Vector2f(780, 100));
+        rect.setFillColor(parseColor(element->getCssProperty("background-color")));
+        rect.setOutlineColor(parseColor(element->getCssProperty("border-color")));
+        rect.setOutlineThickness(1.0f);
+        window.draw(rect);
+
+        float childX = x + 10;
+        float childY = y + 10;
         for (HtmlElement* child : element->getChildren()) {
             renderElement(window, child, childX, childY);
             childY += 10;
@@ -49,4 +59,25 @@ void HtmlRenderer::renderText(sf::RenderWindow& window, const std::string& text,
     sfText.setFillColor(color);
     sfText.setPosition(x, y);
     window.draw(sfText);
+}
+
+sf::Color HtmlRenderer::parseColor(const std::string& colorStr) {
+    if (colorStr.empty()) {
+        return sf::Color::Black; // Default color
+    }
+    if (colorStr[0] == '#') {
+        unsigned int r, g, b;
+        sscanf(colorStr.c_str(), "#%02x%02x%02x", &r, &g, &b);
+        return sf::Color(r, g, b);
+    }
+    return sf::Color::Black;
+}
+
+unsigned int HtmlRenderer::parseFontSize(const std::string& fontSizeStr) {
+    if (fontSizeStr.empty()) {
+        return 0; // Use default size
+    }
+    unsigned int size;
+    std::stringstream(fontSizeStr) >> size;
+    return size;
 }

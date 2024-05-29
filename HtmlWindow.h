@@ -11,16 +11,16 @@
 #include "CssParser.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <fstream>
+#include <vector>
 
 class HtmlWindow {
-private:
-    HtmlRenderer& renderer;
-
 public:
     HtmlWindow(HtmlRenderer& renderer);
     void run(const std::string& htmlFilePath, const std::string& cssFilePath);
-};
 
-void applyCSS(HtmlElement* element, const std::vector<CSSRule>& cssRules);
+private:
+    HtmlRenderer& renderer;
+};
 
 #endif // HTML_WINDOW_H
