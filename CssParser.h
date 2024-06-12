@@ -13,6 +13,9 @@
 struct CSSRule {
     std::string selector;
     std::unordered_map<std::string, std::string> properties;
+    // Additional properties for margin and padding
+    std::string margin;
+    std::string padding;
 };
 
 class CSSParser {

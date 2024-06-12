@@ -31,7 +31,12 @@ CSSRule CSSParser::parseRule() {
                 pos++;
                 skipWhitespaceAndComments();
                 std::string value = parsePropertyValue();
-                rule.properties[property] = value;
+                if (property == "margin" || property == "padding") {
+                    // Handle margin and padding properties separately
+                    rule.properties[property] = value;
+                } else {
+                    rule.properties[property] = value;
+                }
                 skipWhitespaceAndComments();
                 if (cssContent[pos] == ';') {
                     pos++;
@@ -71,15 +76,19 @@ void CSSParser::skipComment() {
 
 std::string CSSParser::parseSelector() {
     size_t start = pos;
-    while (pos < cssContent.size() && cssContent[pos] != '{') {
+    while (pos < cssContent.size() && cssContent[pos] != '{' && !std::isspace(cssContent[pos])) {
+        // Keep parsing until reaching '{' or whitespace
         pos++;
     }
     std::string selector = cssContent.substr(start, pos - start);
-    // Trim trailing whitespace
-    size_t end = selector.find_last_not_of(" \t\n\r\f\v");
-    if (end != std::string::npos) {
-        selector.erase(end + 1);
+
+    // Trim any leading or trailing whitespace
+    size_t firstNonSpace = selector.find_first_not_of(" \t\n\r\f\v");
+    size_t lastNonSpace = selector.find_last_not_of(" \t\n\r\f\v");
+    if (firstNonSpace != std::string::npos && lastNonSpace != std::string::npos) {
+        selector = selector.substr(firstNonSpace, lastNonSpace - firstNonSpace + 1);
     }
+
     return selector;
 }
 

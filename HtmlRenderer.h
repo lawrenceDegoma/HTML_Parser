@@ -26,6 +26,7 @@ private:
     void renderText(sf::RenderWindow& window, const std::string& text, float x, float y, unsigned int size, const sf::Color& color);
     sf::Color parseColor(const std::string& colorStr);
     unsigned int parseFontSize(const std::string& fontSizeStr);
+    std::string trim(const std::string& str);
 };
 
 #endif // HTML_RENDERER_H

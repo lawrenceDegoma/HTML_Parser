@@ -24,7 +24,11 @@ void HtmlRenderer::applyStyles(HtmlElement* element, const std::vector<CSSRule>&
         if (matchesSelector(element, rule.selector)) {
             // Apply styles from the CSS rule to the element
             for (const auto& [property, value] : rule.properties) {
-                element->setCssProperty(property, value);
+                if (property == "color") {
+                    element->setCssProperty("color", value); // Set the color property directly
+                } else {
+                    element->setCssProperty(property, value);
+                }
             }
         }
     }
@@ -44,9 +48,28 @@ void HtmlRenderer::renderElement(sf::RenderWindow& window, HtmlElement* element,
     unsigned int fontSize = parseFontSize(element->getCssProperty("font-size"));
     std::string align = element->getCssProperty("text-align");
 
+    // Extract margin and padding properties
+    std::string margin = element->getCssProperty("margin");
+    std::string padding = element->getCssProperty("padding");
+
+    // Convert margin and padding strings to float values
+    float marginValue = margin.empty() ? 0.0f : std::stof(margin);
+    float paddingValue = padding.empty() ? 0.0f : std::stof(padding);
+
+    // Apply margin to x and y coordinates
+    x += marginValue;
+    y += marginValue;
+
+    // Apply padding to x and y coordinates
+    x += paddingValue;
+    y += paddingValue;
+
     if (tagName == "h1") {
         renderText(window, element->getText(), x, y, fontSize ? fontSize : 30, color);
         y += 40;
+    } else if (tagName == "h2") {
+        renderText(window, element->getText(), x, y, fontSize ? fontSize : 24, color);
+        y += 30;
     } else if (tagName == "p") {
         renderText(window, element->getText(), x, y, fontSize ? fontSize : 20, color);
         y += 30;
@@ -59,13 +82,13 @@ void HtmlRenderer::renderElement(sf::RenderWindow& window, HtmlElement* element,
         rect.setOutlineThickness(1.0f);
         window.draw(rect);
 
-        float childX = x + 10;
-        float childY = y + 10;
+        float childX = x + paddingValue;
+        float childY = y + paddingValue;
         for (HtmlElement* child : element->getChildren()) {
             renderElement(window, child, childX, childY);
             childY += 10;
         }
-        y = childY + 10;
+        y = childY + paddingValue;
     } else {
         for (HtmlElement* child : element->getChildren()) {
             renderElement(window, child, x, y);
@@ -85,14 +108,15 @@ void HtmlRenderer::renderText(sf::RenderWindow& window, const std::string& text,
 
 sf::Color HtmlRenderer::parseColor(const std::string& colorStr) {
     if (colorStr.empty()) {
-        return sf::Color::Black; // Default color
+        return sf::Color::White; // Default color
     }
     if (colorStr[0] == '#') {
-        unsigned int r, g, b;
-        sscanf(colorStr.c_str(), "#%02x%02x%02x", &r, &g, &b);
+        std::istringstream iss(colorStr.substr(1));
+        int r, g, b;
+        iss >> std::hex >> r >> g >> b;
         return sf::Color(r, g, b);
     }
-    return sf::Color::Black;
+    return sf::Color::White;
 }
 
 unsigned int HtmlRenderer::parseFontSize(const std::string& fontSizeStr) {
@@ -104,3 +128,11 @@ unsigned int HtmlRenderer::parseFontSize(const std::string& fontSizeStr) {
     return size;
 }
 
+std::string HtmlRenderer::trim(const std::string& str) {
+    size_t first = str.find_first_not_of(' ');
+    if (std::string::npos == first) {
+        return str;
+    }
+    size_t last = str.find_last_not_of(' ');
+    return str.substr(first, (last - first + 1));
+}
