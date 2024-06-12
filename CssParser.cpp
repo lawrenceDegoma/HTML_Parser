@@ -31,9 +31,21 @@ CSSRule CSSParser::parseRule() {
                 pos++;
                 skipWhitespaceAndComments();
                 std::string value = parsePropertyValue();
+
                 if (property == "margin" || property == "padding") {
-                    // Handle margin and padding properties separately
                     rule.properties[property] = value;
+                } else if (property == "border") {
+                    // Parse border property into components
+                    std::vector<std::string> parts = splitBySpaces(value);
+                    for (const std::string& part : parts) {
+                        if (part == "none" || part == "solid" || part == "dotted" || part == "dashed") {
+                            rule.borderStyle = part;
+                        } else if (part.find("px") != std::string::npos || part.find("em") != std::string::npos) {
+                            rule.borderWidth = part;
+                        } else {
+                            rule.borderColor = part;
+                        }
+                    }
                 } else {
                     rule.properties[property] = value;
                 }
@@ -94,7 +106,7 @@ std::string CSSParser::parseSelector() {
 
 std::string CSSParser::parseIdentifier() {
     size_t start = pos;
-    while (pos < cssContent.size() && std::isalnum(cssContent[pos]) || cssContent[pos] == '-' || cssContent[pos] == '#') {
+    while (pos < cssContent.size() && (std::isalnum(cssContent[pos]) || cssContent[pos] == '-' || cssContent[pos] == '#')) {
         pos++;
     }
     return cssContent.substr(start, pos - start);
@@ -120,4 +132,14 @@ std::string CSSParser::parsePropertyValue() {
 
 bool CSSParser::startsWith(const std::string& prefix) const {
     return cssContent.compare(pos, prefix.size(), prefix) == 0;
+}
+
+std::vector<std::string> CSSParser::splitBySpaces(const std::string& str) {
+    std::istringstream iss(str);
+    std::vector<std::string> result;
+    std::string word;
+    while (iss >> word) {
+        result.push_back(word);
+    }
+    return result;
 }
