@@ -48,7 +48,7 @@ void HtmlWindow::run(const std::string& htmlFilePath, const std::string& cssFile
 
     applyCSS(root, cssRules);
 
-    sf::RenderWindow window(sf::VideoMode(800, 600), "HTML Parser");
+    sf::RenderWindow window(sf::VideoMode(1280, 720), "HTML Parser");
 
     while (window.isOpen()) {
         sf::Event event;
