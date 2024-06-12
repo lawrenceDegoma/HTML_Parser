@@ -9,7 +9,7 @@ CSSParser::CSSParser(const std::string& cssContent) : cssContent(cssContent), po
 std::vector<CSSRule> CSSParser::parse() {
     std::vector<CSSRule> rules;
     while (pos < cssContent.size()) {
-        skipWhitespace();
+        skipWhitespaceAndComments();
         if (pos < cssContent.size()) {
             rules.push_back(parseRule());
         }
@@ -19,42 +19,73 @@ std::vector<CSSRule> CSSParser::parse() {
 
 CSSRule CSSParser::parseRule() {
     CSSRule rule;
-    rule.selector = parseIdentifier();
-    skipWhitespace();
+    rule.selector = parseSelector();
+    skipWhitespaceAndComments();
     if (cssContent[pos] == '{') {
         pos++;
-        skipWhitespace();
+        skipWhitespaceAndComments();
         while (pos < cssContent.size() && cssContent[pos] != '}') {
             std::string property = parseIdentifier();
-            skipWhitespace();
+            skipWhitespaceAndComments();
             if (cssContent[pos] == ':') {
                 pos++;
-                skipWhitespace();
+                skipWhitespaceAndComments();
                 std::string value = parsePropertyValue();
                 rule.properties[property] = value;
-                skipWhitespace();
+                skipWhitespaceAndComments();
                 if (cssContent[pos] == ';') {
                     pos++;
-                    skipWhitespace();
+                    skipWhitespaceAndComments();
                 }
             }
         }
         if (cssContent[pos] == '}') {
             pos++;
+            skipWhitespaceAndComments();
         }
     }
     return rule;
 }
 
-void CSSParser::skipWhitespace() {
-    while (pos < cssContent.size() && std::isspace(cssContent[pos])) {
+void CSSParser::skipWhitespaceAndComments() {
+    while (pos < cssContent.size()) {
+        if (std::isspace(cssContent[pos])) {
+            pos++;
+        } else if (startsWith("/*")) {
+            skipComment();
+        } else {
+            break;
+        }
+    }
+}
+
+void CSSParser::skipComment() {
+    while (pos < cssContent.size() - 1) {
+        if (startsWith("*/")) {
+            pos += 2; // Skip '*/'
+            break;
+        }
         pos++;
     }
 }
 
+std::string CSSParser::parseSelector() {
+    size_t start = pos;
+    while (pos < cssContent.size() && cssContent[pos] != '{') {
+        pos++;
+    }
+    std::string selector = cssContent.substr(start, pos - start);
+    // Trim trailing whitespace
+    size_t end = selector.find_last_not_of(" \t\n\r\f\v");
+    if (end != std::string::npos) {
+        selector.erase(end + 1);
+    }
+    return selector;
+}
+
 std::string CSSParser::parseIdentifier() {
     size_t start = pos;
-    while (pos < cssContent.size() && (std::isalnum(cssContent[pos]) || cssContent[pos] == '-' || cssContent[pos] == '#')) {
+    while (pos < cssContent.size() && std::isalnum(cssContent[pos]) || cssContent[pos] == '-' || cssContent[pos] == '#') {
         pos++;
     }
     return cssContent.substr(start, pos - start);
@@ -63,7 +94,21 @@ std::string CSSParser::parseIdentifier() {
 std::string CSSParser::parsePropertyValue() {
     size_t start = pos;
     while (pos < cssContent.size() && cssContent[pos] != ';' && cssContent[pos] != '}') {
+        if (cssContent[pos] == '"') {
+            // Handle quoted strings
+            pos++;
+            while (pos < cssContent.size() && cssContent[pos] != '"') {
+                pos++;
+            }
+            if (pos < cssContent.size() && cssContent[pos] == '"') {
+                pos++; // Skip closing quote
+            }
+        }
         pos++;
     }
     return cssContent.substr(start, pos - start);
+}
+
+bool CSSParser::startsWith(const std::string& prefix) const {
+    return cssContent.compare(pos, prefix.size(), prefix) == 0;
 }

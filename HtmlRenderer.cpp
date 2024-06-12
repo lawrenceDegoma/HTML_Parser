@@ -6,12 +6,34 @@ HtmlRenderer::HtmlRenderer() {
     }
 }
 
-void HtmlRenderer::render(sf::RenderWindow& window, HtmlElement* root) {
+void HtmlRenderer::render(sf::RenderWindow& window, HtmlElement* root, const std::vector<CSSRule>& cssRules) {
     if (root) {
+        // Apply CSS styles to the HTML elements
+        applyStyles(root, cssRules);
+
         float x = 10.0f;
         float y = 10.0f;
         renderElement(window, root, x, y);
     }
+}
+
+void HtmlRenderer::applyStyles(HtmlElement* element, const std::vector<CSSRule>& cssRules) {
+    // Iterate through CSS rules and apply styles to the element
+    for (const auto& rule : cssRules) {
+        // Check if the selector matches the element
+        if (matchesSelector(element, rule.selector)) {
+            // Apply styles from the CSS rule to the element
+            for (const auto& [property, value] : rule.properties) {
+                element->setCssProperty(property, value);
+            }
+        }
+    }
+}
+
+bool HtmlRenderer::matchesSelector(HtmlElement* element, const std::string& selector) {
+    // Implement selector matching logic here
+    // For simplicity, you can match based on element tag name only
+    return element->getTagName() == selector;
 }
 
 void HtmlRenderer::renderElement(sf::RenderWindow& window, HtmlElement* element, float& x, float& y) {
@@ -81,3 +103,4 @@ unsigned int HtmlRenderer::parseFontSize(const std::string& fontSizeStr) {
     std::stringstream(fontSizeStr) >> size;
     return size;
 }
+

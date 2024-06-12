@@ -1,0 +1,44 @@
+[
+{
+  "directory": "/Users/lawrence/CLionProjects/HTML_Parser/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/HTML_Parser.dir/main.cpp.o -c /Users/lawrence/CLionProjects/HTML_Parser/main.cpp",
+  "file": "/Users/lawrence/CLionProjects/HTML_Parser/main.cpp",
+  "output": "CMakeFiles/HTML_Parser.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/lawrence/CLionProjects/HTML_Parser/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o -c /Users/lawrence/CLionProjects/HTML_Parser/HtmlElement.cpp",
+  "file": "/Users/lawrence/CLionProjects/HTML_Parser/HtmlElement.cpp",
+  "output": "CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o"
+},
+{
+  "directory": "/Users/lawrence/CLionProjects/HTML_Parser/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o -c /Users/lawrence/CLionProjects/HTML_Parser/HtmlParser.cpp",
+  "file": "/Users/lawrence/CLionProjects/HTML_Parser/HtmlParser.cpp",
+  "output": "CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o"
+},
+{
+  "directory": "/Users/lawrence/CLionProjects/HTML_Parser/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o -c /Users/lawrence/CLionProjects/HTML_Parser/HtmlRenderer.cpp",
+  "file": "/Users/lawrence/CLionProjects/HTML_Parser/HtmlRenderer.cpp",
+  "output": "CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o"
+},
+{
+  "directory": "/Users/lawrence/CLionProjects/HTML_Parser/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o -c /Users/lawrence/CLionProjects/HTML_Parser/HtmlWindow.cpp",
+  "file": "/Users/lawrence/CLionProjects/HTML_Parser/HtmlWindow.cpp",
+  "output": "CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o"
+},
+{
+  "directory": "/Users/lawrence/CLionProjects/HTML_Parser/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o -c /Users/lawrence/CLionProjects/HTML_Parser/HtmlDocument.cpp",
+  "file": "/Users/lawrence/CLionProjects/HTML_Parser/HtmlDocument.cpp",
+  "output": "CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o"
+},
+{
+  "directory": "/Users/lawrence/CLionProjects/HTML_Parser/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/HTML_Parser.dir/CssParser.cpp.o -c /Users/lawrence/CLionProjects/HTML_Parser/CssParser.cpp",
+  "file": "/Users/lawrence/CLionProjects/HTML_Parser/CssParser.cpp",
+  "output": "CMakeFiles/HTML_Parser.dir/CssParser.cpp.o"
+}
+]

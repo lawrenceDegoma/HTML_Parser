@@ -1,0 +1,3 @@
+/Users/lawrence/CLionProjects/HTML_Parser/build/CMakeFiles/HTML_Parser.dir
+/Users/lawrence/CLionProjects/HTML_Parser/build/CMakeFiles/edit_cache.dir
+/Users/lawrence/CLionProjects/HTML_Parser/build/CMakeFiles/rebuild_cache.dir

@@ -4,7 +4,9 @@
 
 #include "HtmlWindow.h"
 
-void applyCSS(HtmlElement* element, const std::vector<CSSRule>& cssRules) {
+HtmlWindow::HtmlWindow(HtmlRenderer& renderer) : renderer(renderer) {}
+
+void HtmlWindow::applyCSS(HtmlElement* element, const std::vector<CSSRule>& cssRules) {
     for (const CSSRule& rule : cssRules) {
         if (rule.selector == element->getTagName()) {
             for (const auto& property : rule.properties) {
@@ -17,18 +19,6 @@ void applyCSS(HtmlElement* element, const std::vector<CSSRule>& cssRules) {
     for (HtmlElement* child : element->getChildren()) {
         applyCSS(child, cssRules);
     }
-}
-
-HtmlWindow::HtmlWindow(HtmlRenderer& renderer) : renderer(renderer) {}
-
-std::string readFile(const std::string& filePath) {
-    std::ifstream file(filePath);
-    if (!file.is_open()) {
-        return "";
-    }
-    std::string content((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
-    file.close();
-    return content;
 }
 
 void HtmlWindow::run(const std::string& htmlFilePath, const std::string& cssFilePath) {
@@ -69,7 +59,17 @@ void HtmlWindow::run(const std::string& htmlFilePath, const std::string& cssFile
         }
 
         window.clear(sf::Color::White);
-        renderer.render(window, root);
+        renderer.render(window, root, cssRules);
         window.display();
     }
+}
+
+std::string HtmlWindow::readFile(const std::string& filePath) {
+    std::ifstream file(filePath);
+    if (!file.is_open()) {
+        return "";
+    }
+    std::string content((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+    file.close();
+    return content;
 }

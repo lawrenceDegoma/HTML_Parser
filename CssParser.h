@@ -23,10 +23,13 @@ public:
 private:
     std::string cssContent;
     size_t pos;
-    void skipWhitespace();
+    void skipWhitespaceAndComments();
+    void skipComment();
+    std::string parseSelector();
     std::string parseIdentifier();
     std::string parsePropertyValue();
     CSSRule parseRule();
+    bool startsWith(const std::string& prefix) const;
 };
 
 #endif //HTML_PARSER_CSSPARSER_H

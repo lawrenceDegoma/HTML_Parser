@@ -21,6 +21,9 @@ public:
 
 private:
     HtmlRenderer& renderer;
+
+    std::string readFile(const std::string& filePath);
+    void applyCSS(HtmlElement* element, const std::vector<CSSRule>& cssRules);
 };
 
 #endif // HTML_WINDOW_H

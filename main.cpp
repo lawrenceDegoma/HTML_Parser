@@ -5,7 +5,7 @@ int main() {
     HtmlRenderer renderer;
     HtmlWindow window(renderer);
 
-    window.run("test.html", "styles.css");
+    window.run("index.html", "style.css");
 
     return 0;
 }
