@@ -54,10 +54,10 @@ RM = /opt/homebrew/Cellar/cmake/3.28.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/lawrence/CLionProjects/HTML_Parser
+CMAKE_SOURCE_DIR = /Users/lawrence/Portfolio/HTML_Parser
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/lawrence/CLionProjects/HTML_Parser/build
+CMAKE_BINARY_DIR = /Users/lawrence/Portfolio/HTML_Parser/Build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/HTML_Parser.dir/clean
 CMakeFiles/HTML_Parser.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTML_Parser.dir/build.make CMakeFiles/HTML_Parser.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTML_Parser.dir/build.make CMakeFiles/HTML_Parser.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/lawrence/CLionProjects/HTML_Parser/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target HTML_Parser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/lawrence/Portfolio/HTML_Parser/Build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target HTML_Parser"
 .PHONY : CMakeFiles/HTML_Parser.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/HTML_Parser.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lawrence/CLionProjects/HTML_Parser/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lawrence/Portfolio/HTML_Parser/Build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/HTML_Parser.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lawrence/CLionProjects/HTML_Parser/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lawrence/Portfolio/HTML_Parser/Build/CMakeFiles 0
 .PHONY : CMakeFiles/HTML_Parser.dir/rule
 
 # Convenience name for target.

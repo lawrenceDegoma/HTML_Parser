@@ -4,7 +4,7 @@
 
 #include "HtmlElement.h"
 
-HtmlElement::HtmlElement(const std::string& tagName) : tagName(tagName) {}
+HtmlElement::HtmlElement(const std::string& tagName) : tagName(tagName), parent(nullptr) {}
 
 const std::string& HtmlElement::getTagName() const {
     return tagName;
@@ -20,6 +20,9 @@ const std::string& HtmlElement::getText() const {
 
 void HtmlElement::addChild(HtmlElement* child) {
     children.push_back(child);
+    if (child) {
+        child->setParent(this);
+    }
 }
 
 const std::vector<HtmlElement*>& HtmlElement::getChildren() const {
@@ -42,4 +45,12 @@ void HtmlElement::setCssProperty(const std::string& property, const std::string&
 std::string HtmlElement::getCssProperty(const std::string& property) const {
     auto it = cssProperties.find(property);
     return it != cssProperties.end() ? it->second : "";
+}
+
+void HtmlElement::setParent(HtmlElement* parent) {
+    this->parent = parent;
+}
+
+HtmlElement* HtmlElement::getParent() const {
+    return parent;
 }

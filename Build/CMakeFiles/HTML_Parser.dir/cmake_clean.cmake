@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/HTML_Parser.dir/Button.cpp.o"
+  "CMakeFiles/HTML_Parser.dir/Button.cpp.o.d"
   "CMakeFiles/HTML_Parser.dir/CssParser.cpp.o"
   "CMakeFiles/HTML_Parser.dir/CssParser.cpp.o.d"
   "CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o"

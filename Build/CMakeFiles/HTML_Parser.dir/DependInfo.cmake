@@ -8,13 +8,14 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/lawrence/CLionProjects/HTML_Parser/CssParser.cpp" "CMakeFiles/HTML_Parser.dir/CssParser.cpp.o" "gcc" "CMakeFiles/HTML_Parser.dir/CssParser.cpp.o.d"
-  "/Users/lawrence/CLionProjects/HTML_Parser/HtmlDocument.cpp" "CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o" "gcc" "CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o.d"
-  "/Users/lawrence/CLionProjects/HTML_Parser/HtmlElement.cpp" "CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o" "gcc" "CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o.d"
-  "/Users/lawrence/CLionProjects/HTML_Parser/HtmlParser.cpp" "CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o" "gcc" "CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o.d"
-  "/Users/lawrence/CLionProjects/HTML_Parser/HtmlRenderer.cpp" "CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o" "gcc" "CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o.d"
-  "/Users/lawrence/CLionProjects/HTML_Parser/HtmlWindow.cpp" "CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o" "gcc" "CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o.d"
-  "/Users/lawrence/CLionProjects/HTML_Parser/main.cpp" "CMakeFiles/HTML_Parser.dir/main.cpp.o" "gcc" "CMakeFiles/HTML_Parser.dir/main.cpp.o.d"
+  "/Users/lawrence/Portfolio/HTML_Parser/Button.cpp" "CMakeFiles/HTML_Parser.dir/Button.cpp.o" "gcc" "CMakeFiles/HTML_Parser.dir/Button.cpp.o.d"
+  "/Users/lawrence/Portfolio/HTML_Parser/CssParser.cpp" "CMakeFiles/HTML_Parser.dir/CssParser.cpp.o" "gcc" "CMakeFiles/HTML_Parser.dir/CssParser.cpp.o.d"
+  "/Users/lawrence/Portfolio/HTML_Parser/HtmlDocument.cpp" "CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o" "gcc" "CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o.d"
+  "/Users/lawrence/Portfolio/HTML_Parser/HtmlElement.cpp" "CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o" "gcc" "CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o.d"
+  "/Users/lawrence/Portfolio/HTML_Parser/HtmlParser.cpp" "CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o" "gcc" "CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o.d"
+  "/Users/lawrence/Portfolio/HTML_Parser/HtmlRenderer.cpp" "CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o" "gcc" "CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o.d"
+  "/Users/lawrence/Portfolio/HTML_Parser/HtmlWindow.cpp" "CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o" "gcc" "CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o.d"
+  "/Users/lawrence/Portfolio/HTML_Parser/main.cpp" "CMakeFiles/HTML_Parser.dir/main.cpp.o" "gcc" "CMakeFiles/HTML_Parser.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

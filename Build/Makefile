@@ -57,10 +57,10 @@ RM = /opt/homebrew/Cellar/cmake/3.28.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/lawrence/CLionProjects/HTML_Parser
+CMAKE_SOURCE_DIR = /Users/lawrence/Portfolio/HTML_Parser
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/lawrence/CLionProjects/HTML_Parser/build
+CMAKE_BINARY_DIR = /Users/lawrence/Portfolio/HTML_Parser/Build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lawrence/CLionProjects/HTML_Parser/build/CMakeFiles /Users/lawrence/CLionProjects/HTML_Parser/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lawrence/Portfolio/HTML_Parser/Build/CMakeFiles /Users/lawrence/Portfolio/HTML_Parser/Build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lawrence/CLionProjects/HTML_Parser/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lawrence/Portfolio/HTML_Parser/Build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -128,6 +128,30 @@ HTML_Parser: cmake_check_build_system
 HTML_Parser/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTML_Parser.dir/build.make CMakeFiles/HTML_Parser.dir/build
 .PHONY : HTML_Parser/fast
+
+Button.o: Button.cpp.o
+.PHONY : Button.o
+
+# target to build an object file
+Button.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTML_Parser.dir/build.make CMakeFiles/HTML_Parser.dir/Button.cpp.o
+.PHONY : Button.cpp.o
+
+Button.i: Button.cpp.i
+.PHONY : Button.i
+
+# target to preprocess a source file
+Button.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTML_Parser.dir/build.make CMakeFiles/HTML_Parser.dir/Button.cpp.i
+.PHONY : Button.cpp.i
+
+Button.s: Button.cpp.s
+.PHONY : Button.s
+
+# target to generate assembly for a file
+Button.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/HTML_Parser.dir/build.make CMakeFiles/HTML_Parser.dir/Button.cpp.s
+.PHONY : Button.cpp.s
 
 CssParser.o: CssParser.cpp.o
 .PHONY : CssParser.o
@@ -306,6 +330,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... HTML_Parser"
+	@echo "... Button.o"
+	@echo "... Button.i"
+	@echo "... Button.s"
 	@echo "... CssParser.o"
 	@echo "... CssParser.i"
 	@echo "... CssParser.s"

@@ -53,10 +53,10 @@ RM = /opt/homebrew/Cellar/cmake/3.28.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/lawrence/CLionProjects/HTML_Parser
+CMAKE_SOURCE_DIR = /Users/lawrence/Portfolio/HTML_Parser
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/lawrence/CLionProjects/HTML_Parser/build
+CMAKE_BINARY_DIR = /Users/lawrence/Portfolio/HTML_Parser/Build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/HTML_Parser.dir/depend.make
@@ -70,102 +70,116 @@ include CMakeFiles/HTML_Parser.dir/progress.make
 include CMakeFiles/HTML_Parser.dir/flags.make
 
 CMakeFiles/HTML_Parser.dir/main.cpp.o: CMakeFiles/HTML_Parser.dir/flags.make
-CMakeFiles/HTML_Parser.dir/main.cpp.o: /Users/lawrence/CLionProjects/HTML_Parser/main.cpp
+CMakeFiles/HTML_Parser.dir/main.cpp.o: /Users/lawrence/Portfolio/HTML_Parser/main.cpp
 CMakeFiles/HTML_Parser.dir/main.cpp.o: CMakeFiles/HTML_Parser.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lawrence/CLionProjects/HTML_Parser/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/HTML_Parser.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTML_Parser.dir/main.cpp.o -MF CMakeFiles/HTML_Parser.dir/main.cpp.o.d -o CMakeFiles/HTML_Parser.dir/main.cpp.o -c /Users/lawrence/CLionProjects/HTML_Parser/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lawrence/Portfolio/HTML_Parser/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/HTML_Parser.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTML_Parser.dir/main.cpp.o -MF CMakeFiles/HTML_Parser.dir/main.cpp.o.d -o CMakeFiles/HTML_Parser.dir/main.cpp.o -c /Users/lawrence/Portfolio/HTML_Parser/main.cpp
 
 CMakeFiles/HTML_Parser.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/HTML_Parser.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lawrence/CLionProjects/HTML_Parser/main.cpp > CMakeFiles/HTML_Parser.dir/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lawrence/Portfolio/HTML_Parser/main.cpp > CMakeFiles/HTML_Parser.dir/main.cpp.i
 
 CMakeFiles/HTML_Parser.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HTML_Parser.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lawrence/CLionProjects/HTML_Parser/main.cpp -o CMakeFiles/HTML_Parser.dir/main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lawrence/Portfolio/HTML_Parser/main.cpp -o CMakeFiles/HTML_Parser.dir/main.cpp.s
 
 CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o: CMakeFiles/HTML_Parser.dir/flags.make
-CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o: /Users/lawrence/CLionProjects/HTML_Parser/HtmlElement.cpp
+CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o: /Users/lawrence/Portfolio/HTML_Parser/HtmlElement.cpp
 CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o: CMakeFiles/HTML_Parser.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lawrence/CLionProjects/HTML_Parser/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o -MF CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o.d -o CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o -c /Users/lawrence/CLionProjects/HTML_Parser/HtmlElement.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lawrence/Portfolio/HTML_Parser/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o -MF CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o.d -o CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.o -c /Users/lawrence/Portfolio/HTML_Parser/HtmlElement.cpp
 
 CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lawrence/CLionProjects/HTML_Parser/HtmlElement.cpp > CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lawrence/Portfolio/HTML_Parser/HtmlElement.cpp > CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.i
 
 CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lawrence/CLionProjects/HTML_Parser/HtmlElement.cpp -o CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lawrence/Portfolio/HTML_Parser/HtmlElement.cpp -o CMakeFiles/HTML_Parser.dir/HtmlElement.cpp.s
 
 CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o: CMakeFiles/HTML_Parser.dir/flags.make
-CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o: /Users/lawrence/CLionProjects/HTML_Parser/HtmlParser.cpp
+CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o: /Users/lawrence/Portfolio/HTML_Parser/HtmlParser.cpp
 CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o: CMakeFiles/HTML_Parser.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lawrence/CLionProjects/HTML_Parser/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o -MF CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o.d -o CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o -c /Users/lawrence/CLionProjects/HTML_Parser/HtmlParser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lawrence/Portfolio/HTML_Parser/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o -MF CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o.d -o CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.o -c /Users/lawrence/Portfolio/HTML_Parser/HtmlParser.cpp
 
 CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lawrence/CLionProjects/HTML_Parser/HtmlParser.cpp > CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lawrence/Portfolio/HTML_Parser/HtmlParser.cpp > CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.i
 
 CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lawrence/CLionProjects/HTML_Parser/HtmlParser.cpp -o CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lawrence/Portfolio/HTML_Parser/HtmlParser.cpp -o CMakeFiles/HTML_Parser.dir/HtmlParser.cpp.s
 
 CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o: CMakeFiles/HTML_Parser.dir/flags.make
-CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o: /Users/lawrence/CLionProjects/HTML_Parser/HtmlRenderer.cpp
+CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o: /Users/lawrence/Portfolio/HTML_Parser/HtmlRenderer.cpp
 CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o: CMakeFiles/HTML_Parser.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lawrence/CLionProjects/HTML_Parser/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o -MF CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o.d -o CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o -c /Users/lawrence/CLionProjects/HTML_Parser/HtmlRenderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lawrence/Portfolio/HTML_Parser/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o -MF CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o.d -o CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o -c /Users/lawrence/Portfolio/HTML_Parser/HtmlRenderer.cpp
 
 CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lawrence/CLionProjects/HTML_Parser/HtmlRenderer.cpp > CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lawrence/Portfolio/HTML_Parser/HtmlRenderer.cpp > CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.i
 
 CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lawrence/CLionProjects/HTML_Parser/HtmlRenderer.cpp -o CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lawrence/Portfolio/HTML_Parser/HtmlRenderer.cpp -o CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.s
 
 CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o: CMakeFiles/HTML_Parser.dir/flags.make
-CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o: /Users/lawrence/CLionProjects/HTML_Parser/HtmlWindow.cpp
+CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o: /Users/lawrence/Portfolio/HTML_Parser/HtmlWindow.cpp
 CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o: CMakeFiles/HTML_Parser.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lawrence/CLionProjects/HTML_Parser/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o -MF CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o.d -o CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o -c /Users/lawrence/CLionProjects/HTML_Parser/HtmlWindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lawrence/Portfolio/HTML_Parser/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o -MF CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o.d -o CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o -c /Users/lawrence/Portfolio/HTML_Parser/HtmlWindow.cpp
 
 CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lawrence/CLionProjects/HTML_Parser/HtmlWindow.cpp > CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lawrence/Portfolio/HTML_Parser/HtmlWindow.cpp > CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.i
 
 CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lawrence/CLionProjects/HTML_Parser/HtmlWindow.cpp -o CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lawrence/Portfolio/HTML_Parser/HtmlWindow.cpp -o CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.s
 
 CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o: CMakeFiles/HTML_Parser.dir/flags.make
-CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o: /Users/lawrence/CLionProjects/HTML_Parser/HtmlDocument.cpp
+CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o: /Users/lawrence/Portfolio/HTML_Parser/HtmlDocument.cpp
 CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o: CMakeFiles/HTML_Parser.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lawrence/CLionProjects/HTML_Parser/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o -MF CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o.d -o CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o -c /Users/lawrence/CLionProjects/HTML_Parser/HtmlDocument.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lawrence/Portfolio/HTML_Parser/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o -MF CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o.d -o CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o -c /Users/lawrence/Portfolio/HTML_Parser/HtmlDocument.cpp
 
 CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lawrence/CLionProjects/HTML_Parser/HtmlDocument.cpp > CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lawrence/Portfolio/HTML_Parser/HtmlDocument.cpp > CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.i
 
 CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lawrence/CLionProjects/HTML_Parser/HtmlDocument.cpp -o CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lawrence/Portfolio/HTML_Parser/HtmlDocument.cpp -o CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.s
 
 CMakeFiles/HTML_Parser.dir/CssParser.cpp.o: CMakeFiles/HTML_Parser.dir/flags.make
-CMakeFiles/HTML_Parser.dir/CssParser.cpp.o: /Users/lawrence/CLionProjects/HTML_Parser/CssParser.cpp
+CMakeFiles/HTML_Parser.dir/CssParser.cpp.o: /Users/lawrence/Portfolio/HTML_Parser/CssParser.cpp
 CMakeFiles/HTML_Parser.dir/CssParser.cpp.o: CMakeFiles/HTML_Parser.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lawrence/CLionProjects/HTML_Parser/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/HTML_Parser.dir/CssParser.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTML_Parser.dir/CssParser.cpp.o -MF CMakeFiles/HTML_Parser.dir/CssParser.cpp.o.d -o CMakeFiles/HTML_Parser.dir/CssParser.cpp.o -c /Users/lawrence/CLionProjects/HTML_Parser/CssParser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lawrence/Portfolio/HTML_Parser/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/HTML_Parser.dir/CssParser.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTML_Parser.dir/CssParser.cpp.o -MF CMakeFiles/HTML_Parser.dir/CssParser.cpp.o.d -o CMakeFiles/HTML_Parser.dir/CssParser.cpp.o -c /Users/lawrence/Portfolio/HTML_Parser/CssParser.cpp
 
 CMakeFiles/HTML_Parser.dir/CssParser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/HTML_Parser.dir/CssParser.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lawrence/CLionProjects/HTML_Parser/CssParser.cpp > CMakeFiles/HTML_Parser.dir/CssParser.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lawrence/Portfolio/HTML_Parser/CssParser.cpp > CMakeFiles/HTML_Parser.dir/CssParser.cpp.i
 
 CMakeFiles/HTML_Parser.dir/CssParser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HTML_Parser.dir/CssParser.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lawrence/CLionProjects/HTML_Parser/CssParser.cpp -o CMakeFiles/HTML_Parser.dir/CssParser.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lawrence/Portfolio/HTML_Parser/CssParser.cpp -o CMakeFiles/HTML_Parser.dir/CssParser.cpp.s
+
+CMakeFiles/HTML_Parser.dir/Button.cpp.o: CMakeFiles/HTML_Parser.dir/flags.make
+CMakeFiles/HTML_Parser.dir/Button.cpp.o: /Users/lawrence/Portfolio/HTML_Parser/Button.cpp
+CMakeFiles/HTML_Parser.dir/Button.cpp.o: CMakeFiles/HTML_Parser.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lawrence/Portfolio/HTML_Parser/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/HTML_Parser.dir/Button.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/HTML_Parser.dir/Button.cpp.o -MF CMakeFiles/HTML_Parser.dir/Button.cpp.o.d -o CMakeFiles/HTML_Parser.dir/Button.cpp.o -c /Users/lawrence/Portfolio/HTML_Parser/Button.cpp
+
+CMakeFiles/HTML_Parser.dir/Button.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/HTML_Parser.dir/Button.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lawrence/Portfolio/HTML_Parser/Button.cpp > CMakeFiles/HTML_Parser.dir/Button.cpp.i
+
+CMakeFiles/HTML_Parser.dir/Button.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/HTML_Parser.dir/Button.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lawrence/Portfolio/HTML_Parser/Button.cpp -o CMakeFiles/HTML_Parser.dir/Button.cpp.s
 
 # Object files for target HTML_Parser
 HTML_Parser_OBJECTS = \
@@ -175,7 +189,8 @@ HTML_Parser_OBJECTS = \
 "CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o" \
 "CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o" \
 "CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o" \
-"CMakeFiles/HTML_Parser.dir/CssParser.cpp.o"
+"CMakeFiles/HTML_Parser.dir/CssParser.cpp.o" \
+"CMakeFiles/HTML_Parser.dir/Button.cpp.o"
 
 # External object files for target HTML_Parser
 HTML_Parser_EXTERNAL_OBJECTS =
@@ -187,13 +202,14 @@ HTML_Parser: CMakeFiles/HTML_Parser.dir/HtmlRenderer.cpp.o
 HTML_Parser: CMakeFiles/HTML_Parser.dir/HtmlWindow.cpp.o
 HTML_Parser: CMakeFiles/HTML_Parser.dir/HtmlDocument.cpp.o
 HTML_Parser: CMakeFiles/HTML_Parser.dir/CssParser.cpp.o
+HTML_Parser: CMakeFiles/HTML_Parser.dir/Button.cpp.o
 HTML_Parser: CMakeFiles/HTML_Parser.dir/build.make
-HTML_Parser: /opt/homebrew/lib/libsfml-graphics.2.6.1.dylib
-HTML_Parser: /opt/homebrew/lib/libsfml-audio.2.6.1.dylib
-HTML_Parser: /opt/homebrew/lib/libsfml-window.2.6.1.dylib
-HTML_Parser: /opt/homebrew/lib/libsfml-system.2.6.1.dylib
+HTML_Parser: /opt/homebrew/lib/libsfml-graphics.2.6.2.dylib
+HTML_Parser: /opt/homebrew/lib/libsfml-audio.2.6.2.dylib
+HTML_Parser: /opt/homebrew/lib/libsfml-window.2.6.2.dylib
+HTML_Parser: /opt/homebrew/lib/libsfml-system.2.6.2.dylib
 HTML_Parser: CMakeFiles/HTML_Parser.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/lawrence/CLionProjects/HTML_Parser/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable HTML_Parser"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/lawrence/Portfolio/HTML_Parser/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable HTML_Parser"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/HTML_Parser.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -205,6 +221,6 @@ CMakeFiles/HTML_Parser.dir/clean:
 .PHONY : CMakeFiles/HTML_Parser.dir/clean
 
 CMakeFiles/HTML_Parser.dir/depend:
-	cd /Users/lawrence/CLionProjects/HTML_Parser/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/lawrence/CLionProjects/HTML_Parser /Users/lawrence/CLionProjects/HTML_Parser /Users/lawrence/CLionProjects/HTML_Parser/build /Users/lawrence/CLionProjects/HTML_Parser/build /Users/lawrence/CLionProjects/HTML_Parser/build/CMakeFiles/HTML_Parser.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/lawrence/Portfolio/HTML_Parser/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/lawrence/Portfolio/HTML_Parser /Users/lawrence/Portfolio/HTML_Parser /Users/lawrence/Portfolio/HTML_Parser/Build /Users/lawrence/Portfolio/HTML_Parser/Build /Users/lawrence/Portfolio/HTML_Parser/Build/CMakeFiles/HTML_Parser.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/HTML_Parser.dir/depend
 

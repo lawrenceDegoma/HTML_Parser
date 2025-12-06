@@ -7,8 +7,11 @@
 HtmlWindow::HtmlWindow(HtmlRenderer& renderer) : renderer(renderer) {}
 
 void HtmlWindow::applyCSS(HtmlElement* element, const std::vector<CSSRule>& cssRules) {
+    // Apply styles to this element
     for (const CSSRule& rule : cssRules) {
-        if (rule.selector == element->getTagName()) {
+        // Use the renderer's selector matching logic
+        HtmlRenderer tempRenderer;
+        if (matchesCSSSelector(element, rule.selector)) {
             for (const auto& property : rule.properties) {
                 element->setCssProperty(property.first, property.second);
                 std::cout << "Applied CSS: " << property.first << " = " << property.second << " to " << element->getTagName() << std::endl;
@@ -16,9 +19,52 @@ void HtmlWindow::applyCSS(HtmlElement* element, const std::vector<CSSRule>& cssR
         }
     }
 
+    // Recursively apply to children
     for (HtmlElement* child : element->getChildren()) {
         applyCSS(child, cssRules);
     }
+}
+
+bool HtmlWindow::matchesCSSSelector(HtmlElement* element, const std::string& selector) {
+    if (selector.empty() || !element) return false;
+    
+    // Handle class selectors (.classname)
+    if (selector[0] == '.') {
+        std::string className = selector.substr(1);
+        std::string elementClass = element->getAttribute("class");
+        return elementClass.find(className) != std::string::npos;
+    }
+    
+    // Handle ID selectors (#idname)
+    if (selector[0] == '#') {
+        std::string idName = selector.substr(1);
+        return element->getAttribute("id") == idName;
+    }
+    
+    // Handle descendant selectors (e.g., ".option h2")
+    if (selector.find(' ') != std::string::npos) {
+        size_t spacePos = selector.find(' ');
+        std::string parentSelector = selector.substr(0, spacePos);
+        std::string childSelector = selector.substr(spacePos + 1);
+        
+        // Check if this element matches the child selector
+        if (!matchesCSSSelector(element, childSelector)) {
+            return false;
+        }
+        
+        // Check if any ancestor matches the parent selector
+        HtmlElement* parent = element->getParent();
+        while (parent) {
+            if (matchesCSSSelector(parent, parentSelector)) {
+                return true;
+            }
+            parent = parent->getParent();
+        }
+        return false;
+    }
+    
+    // Handle simple tag selectors
+    return element->getTagName() == selector;
 }
 
 void HtmlWindow::run(const std::string& htmlFilePath, const std::string& cssFilePath) {

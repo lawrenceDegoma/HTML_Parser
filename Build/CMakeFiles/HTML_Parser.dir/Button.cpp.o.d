@@ -1,7 +1,6 @@
-CMakeFiles/HTML_Parser.dir/main.cpp.o: \
-  /Users/lawrence/Portfolio/HTML_Parser/main.cpp \
-  /Users/lawrence/Portfolio/HTML_Parser/HtmlWindow.h \
-  /Users/lawrence/Portfolio/HTML_Parser/HtmlRenderer.h \
+CMakeFiles/HTML_Parser.dir/Button.cpp.o: \
+  /Users/lawrence/Portfolio/HTML_Parser/Button.cpp \
+  /Users/lawrence/Portfolio/HTML_Parser/Button.h \
   /opt/homebrew/include/SFML/Graphics.hpp \
   /opt/homebrew/include/SFML/Window.hpp \
   /opt/homebrew/include/SFML/System.hpp \
@@ -871,30 +870,4 @@ CMakeFiles/HTML_Parser.dir/main.cpp.o: \
   /opt/homebrew/include/SFML/Graphics/Text.hpp \
   /opt/homebrew/include/SFML/Graphics/VertexBuffer.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/iostream \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/istream \
-  /Users/lawrence/Portfolio/HTML_Parser/HtmlElement.h \
-  /Users/lawrence/Portfolio/HTML_Parser/CssParser.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/sstream \
-  /Users/lawrence/Portfolio/HTML_Parser/Button.h \
-  /Users/lawrence/Portfolio/HTML_Parser/HtmlDocument.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/fstream \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/__filesystem/path.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/iomanip \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/filesystem \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/__filesystem/file_status.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/__filesystem/file_type.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/__filesystem/perms.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/__filesystem/file_time_type.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/__chrono/file_clock.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/__filesystem/filesystem_error.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/__filesystem/operations.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/__filesystem/perm_options.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/__filesystem/space_info.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/__filesystem/directory_iterator.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/__filesystem/directory_options.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/__filesystem/u8path.h \
-  /Users/lawrence/Portfolio/HTML_Parser/HtmlParser.h
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/include/c++/v1/istream

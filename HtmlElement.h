@@ -21,6 +21,8 @@ public:
     std::string getAttribute(const std::string& name) const;
     void setCssProperty(const std::string& property, const std::string& value);
     std::string getCssProperty(const std::string& property) const;
+    void setParent(HtmlElement* parent);
+    HtmlElement* getParent() const;
 
 private:
     std::string tagName;
@@ -28,6 +30,7 @@ private:
     std::vector<HtmlElement*> children;
     std::unordered_map<std::string, std::string> attributes;
     std::unordered_map<std::string, std::string> cssProperties;
+    HtmlElement* parent;
 };
 
 #endif // HTML_ELEMENT_H

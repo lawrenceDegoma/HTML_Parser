@@ -21,42 +21,25 @@ CSSRule CSSParser::parseRule() {
     CSSRule rule;
     rule.selector = parseSelector();
     skipWhitespaceAndComments();
-    if (cssContent[pos] == '{') {
+    if (pos < cssContent.size() && cssContent[pos] == '{') {
         pos++;
         skipWhitespaceAndComments();
         while (pos < cssContent.size() && cssContent[pos] != '}') {
             std::string property = parseIdentifier();
             skipWhitespaceAndComments();
-            if (cssContent[pos] == ':') {
+            if (pos < cssContent.size() && cssContent[pos] == ':') {
                 pos++;
                 skipWhitespaceAndComments();
-                std::string value = parsePropertyValue();
-
-                if (property == "margin" || property == "padding") {
-                    rule.properties[property] = value;
-                } else if (property == "border") {
-                    // Parse border property into components
-                    std::vector<std::string> parts = splitBySpaces(value);
-                    for (const std::string& part : parts) {
-                        if (part == "none" || part == "solid" || part == "dotted" || part == "dashed") {
-                            rule.borderStyle = part;
-                        } else if (part.find("px") != std::string::npos || part.find("em") != std::string::npos) {
-                            rule.borderWidth = part;
-                        } else {
-                            rule.borderColor = part;
-                        }
-                    }
-                } else {
-                    rule.properties[property] = value;
-                }
+                std::string value = trim(parsePropertyValue());
+                rule.properties[property] = value;
                 skipWhitespaceAndComments();
-                if (cssContent[pos] == ';') {
+                if (pos < cssContent.size() && cssContent[pos] == ';') {
                     pos++;
                     skipWhitespaceAndComments();
                 }
             }
         }
-        if (cssContent[pos] == '}') {
+        if (pos < cssContent.size() && cssContent[pos] == '}') {
             pos++;
             skipWhitespaceAndComments();
         }
@@ -88,20 +71,11 @@ void CSSParser::skipComment() {
 
 std::string CSSParser::parseSelector() {
     size_t start = pos;
-    while (pos < cssContent.size() && cssContent[pos] != '{' && !std::isspace(cssContent[pos])) {
-        // Keep parsing until reaching '{' or whitespace
+    while (pos < cssContent.size() && cssContent[pos] != '{') {
         pos++;
     }
     std::string selector = cssContent.substr(start, pos - start);
-
-    // Trim any leading or trailing whitespace
-    size_t firstNonSpace = selector.find_first_not_of(" \t\n\r\f\v");
-    size_t lastNonSpace = selector.find_last_not_of(" \t\n\r\f\v");
-    if (firstNonSpace != std::string::npos && lastNonSpace != std::string::npos) {
-        selector = selector.substr(firstNonSpace, lastNonSpace - firstNonSpace + 1);
-    }
-
-    return selector;
+    return trim(selector);
 }
 
 std::string CSSParser::parseIdentifier() {
@@ -115,17 +89,19 @@ std::string CSSParser::parseIdentifier() {
 std::string CSSParser::parsePropertyValue() {
     size_t start = pos;
     while (pos < cssContent.size() && cssContent[pos] != ';' && cssContent[pos] != '}') {
-        if (cssContent[pos] == '"') {
+        if (cssContent[pos] == '"' || cssContent[pos] == '\'') {
             // Handle quoted strings
+            char quote = cssContent[pos];
             pos++;
-            while (pos < cssContent.size() && cssContent[pos] != '"') {
+            while (pos < cssContent.size() && cssContent[pos] != quote) {
                 pos++;
             }
-            if (pos < cssContent.size() && cssContent[pos] == '"') {
+            if (pos < cssContent.size() && cssContent[pos] == quote) {
                 pos++; // Skip closing quote
             }
+        } else {
+            pos++;
         }
-        pos++;
     }
     return cssContent.substr(start, pos - start);
 }
@@ -142,4 +118,13 @@ std::vector<std::string> CSSParser::splitBySpaces(const std::string& str) {
         result.push_back(word);
     }
     return result;
+}
+
+std::string CSSParser::trim(const std::string& str) {
+    size_t first = str.find_first_not_of(" \t\n\r\f\v");
+    if (first == std::string::npos) {
+        return "";
+    }
+    size_t last = str.find_last_not_of(" \t\n\r\f\v");
+    return str.substr(first, (last - first + 1));
 }

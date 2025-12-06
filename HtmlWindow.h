@@ -24,6 +24,7 @@ private:
 
     std::string readFile(const std::string& filePath);
     void applyCSS(HtmlElement* element, const std::vector<CSSRule>& cssRules);
+    bool matchesCSSSelector(HtmlElement* element, const std::string& selector);
 };
 
 #endif // HTML_WINDOW_H
